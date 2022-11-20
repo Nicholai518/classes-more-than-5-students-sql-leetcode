@@ -1,0 +1,12 @@
+1)
+SELECT class
+FROM (SELECT class, count(DISTINCT student) AS c
+FROM courses
+GROUP BY class) AS temp
+WHERE c >= 5
+
+2)
+SELECT class
+FROM courses
+GROUP BY class
+HAVING COUNT(DISTINCT student) >= 5
